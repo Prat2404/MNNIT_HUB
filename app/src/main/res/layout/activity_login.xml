@@ -8,12 +8,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="Login"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:layout_centerHorizontal="true"
-        android:textSize="40dp"
+        android:textSize="50dp"
         android:textStyle="italic"
         android:fontFamily="casual"
-        android:id="@+id/registerTV"
+        android:id="@+id/LoginTV"
         android:layout_marginTop="150dp"
 
 
@@ -23,7 +25,7 @@
         android:layout_height="wrap_content"
 
         android:layout_centerInParent="true"
-        android:layout_below="@id/registerTV"
+        android:layout_below="@id/LoginTV"
         android:layout_marginTop="10dp"
 
         >
@@ -35,48 +37,32 @@
 
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:id="@+id/registerParent2"
+            android:id="@+id/LoginParent2"
             >
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Your Name"
-                android:id="@+id/registerNameET"
+                android:hint="Enter Your Username"
+                android:id="@+id/loginusernameET"
                 />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Your Email"
-                android:id="@+id/registerEmailET"
-                android:layout_below="@id/registerNameET"
-                android:layout_marginTop="10dp"
-                />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Your Password"
-                android:id="@+id/registerPasswordET"
-                android:layout_below="@+id/registerEmailET"
+                android:id="@+id/loginpasswordET"
+                android:layout_below="@+id/loginusernameET"
                 android:layout_marginTop="10dp"
                 android:inputType="textPassword"
                 />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Retype Your Password"
-                android:id="@+id/registerPassword2ET"
-                android:layout_below="@+id/registerPasswordET"
-                android:layout_marginTop="10dp"
-                android:inputType="textPassword"
-                />
-
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/registerPassword2ET"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/loginpasswordET"
                 android:layout_marginTop="20dp"
                 android:id="@+id/registerCheckCB"
-                android:text="I Agree to the Terms and Conditions"
+                android:text="Keep me Logged in"
                 />
 
         </RelativeLayout>
@@ -84,11 +70,13 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/registerParent2"
+            android:layout_below="@+id/LoginParent2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
+            android:text="LOGIN"
+            android:id="@+id/loginBT"
             android:backgroundTint="@color/teal_700"
-            android:text="REGISTER" />
+            />
 
 
 
