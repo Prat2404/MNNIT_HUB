@@ -9,12 +9,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+
 
 public class LoginActivity extends AppCompatActivity {
     private EditText email,passwd;
@@ -56,5 +59,6 @@ public class LoginActivity extends AppCompatActivity {
     public void gotoregisterpage(View view) {
         startActivity(new Intent(getApplicationContext(),RegisterActivity.class));
         finish();
+
     }
 }
