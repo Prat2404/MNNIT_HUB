@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "118891936901",
+    "project_id": "mnnit-hub",
+    "storage_bucket": "mnnit-hub.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118891936901:android:efd0bf5ac8217ff67abdec",
+        "android_client_info": {
+          "package_name": "com.example.mnnit_hub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118891936901-1jtd5p3c0807epjf3i9c0rteq544tl52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDPp6gqLHzpDl6XEc9ARSTOdCht6A1Z_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "118891936901-1jtd5p3c0807epjf3i9c0rteq544tl52.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
