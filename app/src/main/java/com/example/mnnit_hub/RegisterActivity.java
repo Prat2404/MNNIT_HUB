@@ -3,7 +3,6 @@ package com.example.mnnit_hub;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -32,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
         passwd=findViewById(R.id.registerPasswordET);
         passwd2=findViewById(R.id.registerPassword2ET);
         register=findViewById(R.id.registeruser);
-        terms=findViewById(R.id.registerCheckCB);
+        terms=findViewById(R.id.loggedincheck);
         auth=FirebaseAuth.getInstance();
         if(auth.getCurrentUser()!=null)
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
@@ -69,6 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
                                        {
                                            Toast.makeText(getApplicationContext(),"User Created",Toast.LENGTH_SHORT).show();
                                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                           finish();
                                        }
                                        else
                                        {
@@ -96,7 +96,12 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
 
+    public void gotologinPage(View view) {
+        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        finish();
+    }
 }
