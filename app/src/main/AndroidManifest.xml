@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mnnit_hub">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,13 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MNNIT_HUB">
-<<<<<<< HEAD
-        <activity android:name=".Dashboard"></activity>
-        <activity android:name=".MainActivity" />
-=======
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
->>>>>>> 94e5c2586a3bdf962c8229885423254835c6cb8b
         <activity android:name=".RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
