@@ -15,13 +15,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
+import CommonFiles.Users;
 
 public class RegisterActivity extends AppCompatActivity {
-    private EditText name,email,passwd,passwd2;
+    private EditText name,email,passwd,passwd2,phone;
     private Button register;
     private FirebaseAuth auth;
     private CheckBox terms;
-    String username,useremail,userpasswd,userpasswd2;
+    String username,useremail,userpasswd,userpasswd2,userphone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
         passwd=findViewById(R.id.registerPasswordET);
         passwd2=findViewById(R.id.registerPassword2ET);
         register=findViewById(R.id.registeruser);
+        phone  = findViewById(R.id.registerPhoneET);
         terms=findViewById(R.id.loggedincheck);
         auth=FirebaseAuth.getInstance();
         if(auth.getCurrentUser()!=null)
@@ -39,10 +43,12 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(terms.isChecked()) {
-                    username = name.getText().toString().trim();
-                    useremail = email.getText().toString().trim();
-                    userpasswd = passwd.getText().toString().trim();
-                    userpasswd2 = passwd2.getText().toString().trim();
+                        username = name.getText().toString().trim();
+                        useremail = email.getText().toString().trim();
+                        userpasswd = passwd.getText().toString().trim();
+                        userpasswd2 = passwd2.getText().toString().trim();
+                        userphone = phone.getText().toString().trim();
+
                    if(userpasswd.equals(userpasswd2))
                    {
                        if(username.equals(null) || username.equals("") || useremail.equals(null) || useremail.equals("") || userpasswd.equals(null) || userpasswd.equals(""))
@@ -66,9 +72,28 @@ public class RegisterActivity extends AppCompatActivity {
                                    public void onComplete(@NonNull Task<AuthResult> task) {
                                        if(task.isSuccessful())
                                        {
-                                           Toast.makeText(getApplicationContext(),"User Created",Toast.LENGTH_SHORT).show();
-                                           startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                                           finish();
+                                           Users user = new Users(username,useremail,userphone);
+                                           FirebaseDatabase.getInstance().getReference("Users")
+                                                   .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                   .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                               @Override
+                                               public void onComplete(@NonNull Task<Void> task) {
+                                                   if(task.isSuccessful())
+                                                   {
+                                                       Toast.makeText(getApplicationContext(),"User Created",Toast.LENGTH_SHORT).show();
+                                                       startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                                       finish();
+                                                   }
+                                                   else
+                                                   {
+                                                       Toast.makeText(getApplicationContext(),"Userdatabase entry error",Toast.LENGTH_SHORT).show();
+
+
+                                                   }
+
+                                               }
+                                           });
+
                                        }
                                        else
                                        {

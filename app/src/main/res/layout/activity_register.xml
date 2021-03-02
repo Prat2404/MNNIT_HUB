@@ -54,12 +54,19 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Enter your phone number"
+                android:id="@+id/registerPhoneET"
+                android:layout_below="@+id/registerEmailET"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="Enter Your Password"
                 android:id="@+id/registerPasswordET"
-                android:layout_below="@+id/registerEmailET"
+                android:layout_below="@+id/registerPhoneET"
                 android:layout_marginTop="10dp"
                 android:inputType="textPassword"
                 />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
