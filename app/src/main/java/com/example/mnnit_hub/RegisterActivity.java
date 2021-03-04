@@ -17,6 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+
 import CommonFiles.*;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -25,6 +26,8 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private CheckBox terms;
     String username, useremail, userpasswd, userpasswd2, userphone;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +110,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "Kindly confirm terms and conditions", Toast.LENGTH_SHORT).show();
+
 
 
                 }
