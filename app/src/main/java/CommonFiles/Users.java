@@ -1,10 +1,12 @@
 package CommonFiles;
 
-public class Users {
+import java.io.Serializable;
+
+public class Users implements Serializable {
     public String name;
     public String email;
     public String phone;
-
+    private String UID;
 
     public Users() {
 
