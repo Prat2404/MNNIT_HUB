@@ -33,6 +33,12 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        auth = FirebaseAuth.getInstance();
+        if (auth.getCurrentUser()!=null) {
+            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+           finish();
+        }
+
         name = findViewById(R.id.registerNameET);
         email = findViewById(R.id.registerEmailET);
         passwd = findViewById(R.id.registerPasswordET);
@@ -40,9 +46,8 @@ public class RegisterActivity extends AppCompatActivity {
         register = findViewById(R.id.registeruser);
         phone = findViewById(R.id.registerPhoneET);
         terms = findViewById(R.id.loggedincheck);
-        auth = FirebaseAuth.getInstance();
-        if (auth.getCurrentUser() != null)
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,8 +88,10 @@ public class RegisterActivity extends AppCompatActivity {
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if (task.isSuccessful()) {
                                                         Toast.makeText(getApplicationContext(), "User Created", Toast.LENGTH_SHORT).show();
-                                                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                                    //    ProfileActivity.user=new Users(username,useremail,userphone);
+                                                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                                                         finish();
+
                                                     } else {
                                                         Toast.makeText(getApplicationContext(), "Userdatabase entry error", Toast.LENGTH_SHORT).show();
 
