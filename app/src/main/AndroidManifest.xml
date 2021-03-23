@@ -11,6 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MNNIT_HUB">
+<<<<<<< HEAD
+=======
+        <activity android:name=".ProfileActivity"/>
+        <activity android:name=".Dashboard" />
+>>>>>>> b0e4c6dc1d11b5e41d8298c20904dba80e228a73
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity">
