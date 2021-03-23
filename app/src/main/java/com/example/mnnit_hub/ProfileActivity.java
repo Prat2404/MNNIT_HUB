@@ -21,10 +21,10 @@ import CommonFiles.*;
 
 public class ProfileActivity extends AppCompatActivity {
   private TextView userName,userEmail,userNumber;
-  private String rName,Email,Number;
+  private String Name,Email,Number;
     private FirebaseAuth auth;
     private  FirebaseDatabase fire;
-    private  String Name;
+//    private  String Name;
     public static  Users user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +57,10 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
        // userName.setText(Name);
+        Name = userName.getText().toString();
+        Email = userEmail.getText().toString();
+        Number = userNumber.getText().toString();
+        Constants.user = new Users(Name,Email,Number);
     }
     public void Logout(View view) {
         FirebaseAuth.getInstance().signOut();
